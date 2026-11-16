@@ -7,10 +7,10 @@
 A local music workspace from **XTRA GOOD LABS** — built around hands-on sampling and MIDI performance.
 
 [![Checks](https://github.com/XTRAGOODLABS/beatdeck-studio/actions/workflows/ci.yml/badge.svg)](https://github.com/XTRAGOODLABS/beatdeck-studio/actions/workflows/ci.yml)
-[![Source release](https://img.shields.io/badge/source_release-v1.0.0-f4aa54?style=flat-square)](https://github.com/XTRAGOODLABS/beatdeck-studio/releases/tag/v1.0.0)
+[![Mac app](https://img.shields.io/badge/Mac_app-v1.0.1-f4aa54?style=flat-square)](https://github.com/XTRAGOODLABS/beatdeck-studio/releases/tag/v1.0.1)
 ![Platform](https://img.shields.io/badge/tested_on-macOS-b79ae6?style=flat-square)
 
-[**Get the source release**](https://github.com/XTRAGOODLABS/beatdeck-studio/releases/latest) · [**Controller map**](Controller-Mappings.md) · [**Version history**](CHANGELOG.md) · [**What's next**](ROADMAP.md)
+[**Download for Mac**](https://github.com/XTRAGOODLABS/beatdeck-studio/releases/download/v1.0.1/Beatdeck-1.0.1-macOS-arm64.dmg) · [**Controller map**](Controller-Mappings.md) · [**Version history**](CHANGELOG.md) · [**What's next**](ROADMAP.md)
 
 </div>
 
@@ -57,6 +57,14 @@ The planned **JUCE rebuild** carries this workflow into a native audio/MIDI engi
 - [Planned expansion and JUCE rebuild](ROADMAP.md).
 - [Controller mappings and illustrated Code25 map](Controller-Mappings.md), including the tested Maschine MK2 and Alesis Vortex Wireless status.
 
+## Install on Mac — no build required
+
+[**Download Beatdeck for Apple Silicon (.dmg)**](https://github.com/XTRAGOODLABS/beatdeck-studio/releases/download/v1.0.1/Beatdeck-1.0.1-macOS-arm64.dmg)
+
+Requires an **Apple Silicon Mac (M-series), macOS 13 Ventura or newer**. Open the DMG, drag Beatdeck to Applications, eject the image, then open the app. No Node.js or developer tools required. Intel Macs are not supported by this download.
+
+This initial download is **not Developer ID signed or Apple-notarized**. If macOS blocks it and you trust the release, use **System Settings → Privacy & Security → Open Anyway** after trying to launch it. [Installation guide](INSTALL-MAC.md) · [Apple's instructions](https://support.apple.com/en-us/102445).
+
 ## Run from source
 
 Use Node.js 22.12 or newer and npm:
@@ -101,7 +109,7 @@ The syntax check includes embedded engine scripts and local script/style referen
 
 ## Distribution status
 
-Version 1.0.0 is a source release, without a signed or notarized installer. The development Electron version is pinned in the lockfile and source startup was verified in an isolated macOS development profile. The existing installed application remains independent. The public repository is maintained at https://github.com/XTRAGOODLABS/beatdeck-studio.
+GitHub v1.0.0 was the initial source release. GitHub v1.0.1 adds an Apple Silicon Mac app download. The app has an ad-hoc integrity signature and is not Developer ID signed or notarized. The development Electron version is pinned in the lockfile and source startup was verified in an isolated macOS development profile. The existing installed application remains independent. The public repository is maintained at https://github.com/XTRAGOODLABS/beatdeck-studio.
 
 Project code is **UNLICENSED** until its owner chooses distribution terms. SoundTouchJS has its own LGPL 2.1-or-later license and notices in [vendor](vendor/SoundTouchJS-NOTICE.md). No Serato code or assets are included.
 

@@ -4,6 +4,18 @@ Beatdeck began as a browser drum machine created with Claude, became a standalon
 
 Versions 1.2.0–1.5.0 identify development milestones reconstructed from chats and dated backups. The October standalone versions and the November GitHub tag use overlapping numbering: the first GitHub source release, tagged v1.0.0 on November 16, 2026, contains the v1.5.0 Studio milestone. Existing tags and package versions have not been rewritten.
 
+## GitHub v1.0.1 — November 16, 2026
+
+First downloadable Mac application for the Studio milestone below. This GitHub release number is separate from the historical October v1.0.1 milestone.
+
+- Apple Silicon (arm64) app distributed as a drag-to-Applications DMG; requires macOS 13 or newer.
+- Includes Electron: users do not need Node.js, npm or a local build.
+- Beatdeck icon, music application category, third-party notices, installation guide and SHA-256 checksum.
+- Reproducible macOS packaging script with an explicit runtime allowlist; excludes personal data, development tools and Git history.
+- Packaged-app testing can use BEATDECK_DATA_DIR without opening installed application data.
+- Ad-hoc integrity signature only; no Developer ID signing or Apple notarization. First launch may require Open Anyway.
+- No changes to controller assignments or the existing installed app.
+
 ## v1.5.0 — November 15–16, 2026
 
 Studio workflow, expanded Code25 support and two drum kits.

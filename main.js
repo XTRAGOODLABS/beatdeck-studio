@@ -5,7 +5,8 @@ const { execFile } = require('child_process');
 const fs = require('fs');
 
 // Keep source-checkout testing separate from an installed Beatdeck library.
-if (!app.isPackaged) app.setPath('userData', process.env.BEATDECK_DATA_DIR || path.join(app.getPath('appData'), 'Beatdeck-Dev'));
+if (process.env.BEATDECK_DATA_DIR) app.setPath('userData', process.env.BEATDECK_DATA_DIR);
+else if (!app.isPackaged) app.setPath('userData', path.join(app.getPath('appData'), 'Beatdeck-Dev'));
 
 // The Maschine only switches to MIDI mode when Native Instruments' little background helpers are running.
 // The Maschine software normally starts them; Beatdeck starts them itself (hidden) so you don't have to.
