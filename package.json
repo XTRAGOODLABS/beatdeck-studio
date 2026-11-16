@@ -1,0 +1,21 @@
+{
+  "name": "beatdeck-studio",
+  "productName": "Beatdeck",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local sample chopping, sequencing and performance workspace",
+  "main": "main.js",
+  "author": "XTRA GOOD LABS",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "start": "electron .",
+    "check": "node scripts/check.cjs",
+    "test": "node --test tests/code25.test.cjs tests/tracklib-library.cjs tests/two-kits-project.cjs && node tests/audio-stretch.cjs"
+  },
+  "devDependencies": {
+    "electron": "45.3.3"
+  }
+}

@@ -1,0 +1,55 @@
+# Beatdeck Studio
+
+A local Electron workspace for sample chopping, melodic sample playing, drum sequencing, scenes, songs and performance. The interface has Sample, Sequence, Song, Mixer, Perform and Code25 pages, with a collapsible browser for Projects, Drums, Audio Samples, Tracklib, FX and Instruments.
+
+## Run from source
+
+Use Node.js 22.12 or newer and npm:
+
+```sh
+npm ci
+npm start
+```
+
+Source runs use a separate **Beatdeck-Dev** application-data folder. They do not import or overwrite an installed Beatdeck library, recovery file or MIDI configuration. Set `BEATDECK_DATA_DIR` to choose another development data folder. The primary tested platform is macOS; Windows and Linux device behavior is not verified.
+
+## Make a beat
+
+1. Select a Chops track and load audio from your local library.
+2. Trim and fade a selected chop. Keys plays it melodically; Chops assigns successive keys to slices. Mono chokes the previous voice; Poly permits chords.
+3. Adjust sample pitch, source BPM, Match tempo, project key/scale and Stretch/Tape directly below the waveform. Pitch Macro steps one semitone; Micro steps 0.01 semitone.
+4. Use Sequence for melodic notes and drum steps, then arrange scenes in Song. Linked repeats share edits; independent variations have their own notes.
+5. Save a portable `.beatdeck` project using the File menu. Audio export goes to Downloads.
+
+Stretch changes sample tempo and pitch independently using SoundTouch. Tape links playback speed and pitch. Live loop clips retain their speed-based playback engine. Stretch output can have artifacts; it does not reproduce Serato Pitch ’n Time or preserve vocal formants.
+
+## Notes and octave labels
+
+The unpitched sample reference is shown below the waveform, including its MIDI note number. Middle C defaults to **C4 (MIDI 60)**. Sound settings offers C3 labels for the same MIDI note. This local display preference changes piano-roll labels only; sample pitch, recorded notes and controller mappings are unchanged. The sample’s own Pitch setting still applies at its reference key.
+
+## Code25
+
+See [controller setup and mappings](Code25-Mapping.md). Existing assignments in the same application-data profile are retained. Unknown hardware messages are learned rather than guessed. This source package excludes personal MIDI device IDs and local configuration backups. First-time source runs need their own controller calibration.
+
+## Tracklib
+
+Tracklib is a separate **local folder library**, with its own folder selector, Refresh, search, Audition and Load. Cards start collapsed. If `~/Desktop/TRACKLIB` exists, it is offered as the initial source. Other folders can be registered with + Folder. Samples and Drums remain separate; source audio is never moved or modified. No Tracklib audio, account integration or clearance is supplied by this repository.
+
+## Checks
+
+```sh
+npm run check
+npm test
+```
+
+The syntax check includes embedded engine scripts and local script/style references. Tests cover MIDI routing, pickup and precision, library separation and audio pitch/tempo processing. CI runs those checks with Node 24. Browser integration scripts in `tests/*-browser.js` must be evaluated in an isolated test window: they replace the test project and must never run in a live song. Native dialogs, hardware input and listening quality require manual verification.
+
+## Distribution status
+
+Version 1.0.0 is a source release, without a signed or notarized installer. The development Electron version is pinned in the lockfile and source startup was verified in an isolated macOS development profile. The existing installed application remains independent. The private repository is maintained at https://github.com/XTRAGOODLABS/beatdeck-studio.
+
+Project code is **UNLICENSED** until its owner chooses distribution terms. SoundTouchJS has its own LGPL 2.1-or-later license and notices in [vendor](vendor/SoundTouchJS-NOTICE.md). No Serato code or assets are included.
+
+## Two drum kits
+
+Drum mode uses all 16 pads: Kit A on pads 1–8 in the lower two rows, Kit B on pads 9–16 in the upper two rows. The app follows the physical controller layout, with Kit B above Kit A. Each eight-piece kit has its own chooser, samples, tone bus and sequencer lanes. Choke groups are independent between the kits. Existing eight-drum songs migrate their chop notes and mixer settings when opened. New projects support up to 28 embedded audio assets: sixteen drums, four chops and eight loops. [Current Code25 map](docs/Code25-current-mappings.png).
