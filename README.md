@@ -2,6 +2,12 @@
 
 A local Electron workspace for sample chopping, melodic sample playing, drum sequencing, scenes, songs and performance. The interface has Sample, Sequence, Song, Mixer, Perform and Code25 pages, with a collapsible browser for Projects, Drums, Audio Samples, Tracklib, FX and Instruments.
 
+## History, roadmap and controllers
+
+- [Combined version history](CHANGELOG.md), including the original Claude milestones and Studio work.
+- [Planned expansion and JUCE rebuild](ROADMAP.md).
+- [Controller mappings and illustrated Code25 map](Controller-Mappings.md), including the tested Maschine MK2 and Alesis Vortex Wireless status.
+
 ## Run from source
 
 Use Node.js 22.12 or newer and npm:
