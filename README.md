@@ -1,6 +1,55 @@
-# Beatdeck Studio
+<div align="center">
 
-A local Electron workspace for sample chopping, melodic sample playing, drum sequencing, scenes, songs and performance. The interface has Sample, Sequence, Song, Mixer, Perform and Code25 pages, with a collapsible browser for Projects, Drums, Audio Samples, Tracklib, FX and Instruments.
+# BEATDECK STUDIO
+
+### Chop samples. Play melodies. Build beats.
+
+A local music workspace from **XTRA GOOD LABS** — built around hands-on sampling and MIDI performance.
+
+[![Checks](https://github.com/XTRAGOODLABS/beatdeck-studio/actions/workflows/ci.yml/badge.svg)](https://github.com/XTRAGOODLABS/beatdeck-studio/actions/workflows/ci.yml)
+[![Source release](https://img.shields.io/badge/source_release-v1.0.0-f4aa54?style=flat-square)](https://github.com/XTRAGOODLABS/beatdeck-studio/releases/tag/v1.0.0)
+![Platform](https://img.shields.io/badge/tested_on-macOS-b79ae6?style=flat-square)
+
+[**Get the source release**](https://github.com/XTRAGOODLABS/beatdeck-studio/releases/latest) · [**Controller map**](Controller-Mappings.md) · [**Version history**](CHANGELOG.md) · [**What's next**](ROADMAP.md)
+
+</div>
+
+![Beatdeck sampler with eight chops, waveform trim, pitch and tempo controls, and two drum kits](docs/screenshots/sampler.png)
+
+*The current app, shown with a generated demo loop. Kit B sits above Kit A, matching the Code25.*
+
+## From a sample to a song
+
+| Chop & play | Sequence & arrange | Perform & explore |
+|---|---|---|
+| Waveform trimming, fades and 16 chop pads | Melodic piano roll and drum sequencing | Code25 controls with Macro/Micro precision |
+| Four chop tracks and melodic sample playing | Patterns, scenes and song arrangement | Two independent eight-piece drum kits |
+| Independent pitch/tempo in Stretch mode | Portable projects and WAV export | Separate Tracklib browser and local libraries |
+
+## Notes & groove
+
+![Beatdeck sequence page showing a melodic piano roll and both eight-piece drum kits](docs/screenshots/sequence.png)
+
+*Write melodic phrases, adjust note lengths and velocity, then build patterns into a song.*
+
+## Hands on
+
+**Code25** is the current main controller. **Maschine MK2** and **Alesis Vortex Wireless** mappings are also recorded as tested and working by the owner. See the controller guide for verification details and the available assignment tables.
+
+<details>
+<summary><strong>Show the Code25 physical control map</strong></summary>
+
+![Code25 physical control map for Beatdeck](docs/Code25-current-mappings.png)
+
+[Full setup and MIDI assignments](Code25-Mapping.md) · [Download PNG](docs/Code25-current-mappings.png) · [Download SVG](docs/Code25-current-mappings.svg)
+
+</details>
+
+## Next: the native chapter
+
+The planned **JUCE rebuild** carries this workflow into a native audio/MIDI engine, with VST3/AU effects hosting, project migration and existing controller support as priorities. These are planned features; today's release uses Electron and JavaScript. [Read the roadmap →](ROADMAP.md)
+
+---
 
 ## History, roadmap and controllers
 
@@ -52,7 +101,7 @@ The syntax check includes embedded engine scripts and local script/style referen
 
 ## Distribution status
 
-Version 1.0.0 is a source release, without a signed or notarized installer. The development Electron version is pinned in the lockfile and source startup was verified in an isolated macOS development profile. The existing installed application remains independent. The private repository is maintained at https://github.com/XTRAGOODLABS/beatdeck-studio.
+Version 1.0.0 is a source release, without a signed or notarized installer. The development Electron version is pinned in the lockfile and source startup was verified in an isolated macOS development profile. The existing installed application remains independent. The public repository is maintained at https://github.com/XTRAGOODLABS/beatdeck-studio.
 
 Project code is **UNLICENSED** until its owner chooses distribution terms. SoundTouchJS has its own LGPL 2.1-or-later license and notices in [vendor](vendor/SoundTouchJS-NOTICE.md). No Serato code or assets are included.
 
