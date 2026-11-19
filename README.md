@@ -10,7 +10,7 @@ A local music workspace from **XTRA GOOD LABS** — built around hands-on sampli
 [![Mac app](https://img.shields.io/badge/Mac_app-v1.0.1-f4aa54?style=flat-square)](https://github.com/XTRAGOODLABS/beatdeck-studio/releases/tag/v1.0.1)
 ![Platform](https://img.shields.io/badge/tested_on-macOS-b79ae6?style=flat-square)
 
-[**Website**](https://xtragoodlabs.github.io/beatdeck-studio/) · [**Download for Mac**](https://github.com/XTRAGOODLABS/beatdeck-studio/releases/download/v1.0.1/Beatdeck-1.0.1-macOS-arm64.dmg) · [**Controller map**](Controller-Mappings.md) · [**Version history**](CHANGELOG.md) · [**What's next**](ROADMAP.md)
+[**Website**](https://xtragoodlabs.github.io/beatdeck-studio/) · [**Download for Mac**](https://github.com/XTRAGOODLABS/beatdeck-studio/releases/download/v1.0.1/Beatdeck-1.0.1-macOS-arm64.dmg) · [**Controller map**](Controller-Mappings.md) · [**Version history**](CHANGELOG.md) · [**What's next**](ROADMAP.md) · [**More from XTRA GOOD LABS**](https://github.com/XTRAGOODLABS)
 
 </div>
 
