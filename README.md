@@ -1,6 +1,6 @@
 <div align="center">
 
-# BEATDECK STUDIO
+# BEATDECK™ STUDIO
 
 ### Chop samples. Play melodies. Build beats.
 
@@ -116,3 +116,7 @@ Project code is **UNLICENSED** until its owner chooses distribution terms. Sound
 ## Two drum kits
 
 Drum mode uses all 16 pads: Kit A on pads 1–8 in the lower two rows, Kit B on pads 9–16 in the upper two rows. The app follows the physical controller layout, with Kit B above Kit A. Each eight-piece kit has its own chooser, samples, tone bus and sequencer lanes. Choke groups are independent between the kits. Existing eight-drum songs migrate their chop notes and mixer settings when opened. New projects support up to 28 embedded audio assets: sixteen drums, four chops and eight loops. [Current Code25 map](docs/Code25-current-mappings.png).
+
+---
+
+GOOD MIXX™, Spin Deck™, Crate OS™ and Beatdeck™ are trademarks of XTRA GOOD LABS.
