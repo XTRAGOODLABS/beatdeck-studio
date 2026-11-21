@@ -4,6 +4,13 @@ Beatdeck began as a browser drum machine created with Claude, became a standalon
 
 Versions 1.2.0–1.5.0 identify development milestones reconstructed from chats and dated backups. The October standalone versions and the November GitHub tag use overlapping numbering: the first GitHub source release, tagged v1.0.0 on November 16, 2026, contains the v1.5.0 Studio milestone. Existing tags and package versions have not been rewritten.
 
+## GitHub v1.0.2 — November 20, 2026
+
+- **Help > Report a Problem** opens the Beatdeck bug form on GitHub with the version, your Mac and recent errors already filled in. Nothing is sent unless you press Submit on GitHub.
+- **Help > Suggest an Idea** and **Help > Show Error Log**.
+- Beatdeck now keeps a small error log on your Mac (in Beatdeck's settings folder, under `logs`), with your user name hidden in folder paths.
+- Built by GitHub's own Mac from this repository (Apple Silicon, macOS 13 or newer). Still ad-hoc signed only, so first launch may need Open Anyway.
+
 ## GitHub v1.0.1 — November 16, 2026
 
 First downloadable Mac application for the Studio milestone below. This GitHub release number is separate from the historical October v1.0.1 milestone.

@@ -1,0 +1,45 @@
+name: Mac release
+# Builds the Beatdeck Mac app on one of GitHub's Macs and posts it as a release.
+# Started by hand: Actions > Mac release > Run workflow.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  mac:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm test
+      - run: npm run package:mac
+      - name: Check the app
+        run: |
+          V=$(node -p "require('./package.json').version")
+          hdiutil attach "dist/Beatdeck-$V-macOS-arm64.dmg" -mountpoint /tmp/bd -nobrowse
+          codesign --verify --deep --strict /tmp/bd/Beatdeck.app
+          test "$(/usr/libexec/PlistBuddy -c 'Print CFBundleShortVersionString' /tmp/bd/Beatdeck.app/Contents/Info.plist)" = "$V"
+          npx --yes @electron/asar list /tmp/bd/Beatdeck.app/Contents/Resources/app.asar | grep -q error-report.cjs
+          hdiutil detach /tmp/bd
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Beatdeck-macOS
+          path: |
+            dist/*.dmg
+            dist/SHA256SUMS.txt
+      - name: Publish the download
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          V=$(node -p "require('./package.json').version")
+          awk -v v="## GitHub v$V " 'index($0, v)==1{f=1;next} /^## /{f=0} f' CHANGELOG.md > notes.md
+          if gh release view "v$V" >/dev/null 2>&1; then
+            gh release upload "v$V" dist/*.dmg dist/SHA256SUMS.txt --clobber
+          else
+            gh release create "v$V" dist/*.dmg dist/SHA256SUMS.txt --target "$GITHUB_SHA" --title "Beatdeck $V" --notes-file notes.md
+          fi
