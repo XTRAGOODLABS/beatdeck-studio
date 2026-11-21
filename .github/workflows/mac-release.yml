@@ -17,6 +17,8 @@ jobs:
       - run: npm ci
       - run: npm run check
       - run: npm test
+      - name: Make sure Electron's own files are downloaded
+        run: test -f node_modules/electron/dist/LICENSE || node node_modules/electron/install.js
       - run: npm run package:mac
       - name: Check the app
         run: |
