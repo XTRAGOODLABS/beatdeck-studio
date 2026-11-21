@@ -3,6 +3,7 @@ const path = require('path');
 const { LinkPeer } = require('./link');
 const { execFile } = require('child_process');
 const fs = require('fs');
+const { createErrorReporter } = require('./error-report.cjs');
 
 // Keep source-checkout testing separate from an installed Beatdeck library.
 if (process.env.BEATDECK_DATA_DIR) app.setPath('userData', process.env.BEATDECK_DATA_DIR);
@@ -63,6 +64,9 @@ async function wakeMaschine() {
 }
 
 let link = null, projectService=null, projectQuitRequested=false;
+// problem reports: errors stay in a log on this Mac until the person chooses to report them
+const reporter = createErrorReporter({ app, shell });
+reporter.watchMainProcess();
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -71,6 +75,7 @@ function createWindow() {
     webPreferences: { contextIsolation: true, sandbox: true, backgroundThrottling: false, preload: path.join(__dirname, 'preload.js') }
   });
   projectService.attachWindow(win);
+  reporter.watchWindow(win);
   win.loadFile(path.join(__dirname, 'index.html'));
   // dropped files are handled by the page; never let a drop navigate away
   win.webContents.on('will-navigate', (e, url) => { if (!url.startsWith('file://') || !url.endsWith('index.html')) { e.preventDefault(); if (/^https?:/.test(url)) shell.openExternal(url); } });
@@ -115,7 +120,8 @@ app.whenReady().then(() => {
     ]},
     { role: 'editMenu' },
     { label: 'View', submenu: [{ role: 'reload' }, { role: 'togglefullscreen' }, { type: 'separator' }, { role: 'resetZoom' }, { role: 'zoomIn' }, { role: 'zoomOut' }] },
-    { role: 'windowMenu' }
+    { role: 'windowMenu' },
+    { role: 'help', submenu: reporter.menuItems() }
   ]));
   createWindow();
   app.on('activate', () => { if (BrowserWindow.getAllWindows().length === 0) createWindow(); });

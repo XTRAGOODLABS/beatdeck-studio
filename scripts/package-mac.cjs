@@ -15,7 +15,7 @@ async function main() {
   const stage = await fs.mkdtemp(path.join(os.tmpdir(), 'beatdeck-package-'));
   // Explicit runtime allowlist: no songs, samples, device IDs, history or build tools.
   const runtime = ['index.html', 'main.js', 'preload.js', 'link.js', 'project-files.cjs',
-    'sample-library.cjs', 'audio-stretch.js', 'code25.js', 'note-display.js', 'studio.js',
+    'sample-library.cjs', 'error-report.cjs', 'audio-stretch.js', 'code25.js', 'note-display.js', 'studio.js',
     'studio.css', 'studio-engine.js', 'studio-notes.js', 'workspace-pages.js',
     'workspace-pages.css', 'vendor'];
   try {
