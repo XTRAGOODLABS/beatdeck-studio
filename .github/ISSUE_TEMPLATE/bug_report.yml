@@ -1,0 +1,58 @@
+name: "🐞 Report a bug in Beatdeck"
+description: "Something in Beatdeck didn't work"
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for helping make Beatdeck better! Plain words are fine."
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you press or do, and what went wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+  - type: input
+    id: version
+    attributes:
+      label: "Beatdeck version"
+      description: "Shown in the app's About box or on the download page, for example 1.8.0"
+    validations:
+      required: true
+  - type: input
+    id: mac
+    attributes:
+      label: Your Mac
+      description: For example "M4 Mac mini, macOS 15" or "Intel MacBook Pro"
+  - type: input
+    id: controller
+    attributes:
+      label: Controller (if any)
+      description: For example "M-Audio Code 25" or "Maschine MK2"
+  - type: dropdown
+    id: page
+    attributes:
+      label: Which page were you on?
+      options:
+        - Sample
+        - Sequence
+        - Song
+        - Mixer
+        - Perform
+        - Controller page
+        - Other
+  - type: textarea
+    id: error
+    attributes:
+      label: Error message (if any)
+      description: Copy any error text you saw and paste it here.
+      render: text
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Drag a screenshot here if you have one
