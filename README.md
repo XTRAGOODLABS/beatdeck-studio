@@ -7,10 +7,10 @@
 A local music workspace from **XTRA GOOD LABS** — built around hands-on sampling and MIDI performance.
 
 [![Checks](https://github.com/XTRAGOODLABS/beatdeck-studio/actions/workflows/ci.yml/badge.svg)](https://github.com/XTRAGOODLABS/beatdeck-studio/actions/workflows/ci.yml)
-[![Mac app](https://img.shields.io/badge/Mac_app-v1.0.1-f4aa54?style=flat-square)](https://github.com/XTRAGOODLABS/beatdeck-studio/releases/tag/v1.0.1)
+[![Mac app](https://img.shields.io/badge/Mac_app-v1.0.2-f4aa54?style=flat-square)](https://github.com/XTRAGOODLABS/beatdeck-studio/releases/tag/v1.0.2)
 ![Platform](https://img.shields.io/badge/tested_on-macOS-b79ae6?style=flat-square)
 
-[**Website**](https://xtragoodlabs.github.io/beatdeck-studio/) · [**Download for Mac**](https://github.com/XTRAGOODLABS/beatdeck-studio/releases/download/v1.0.1/Beatdeck-1.0.1-macOS-arm64.dmg) · [**Controller map**](Controller-Mappings.md) · [**Version history**](CHANGELOG.md) · [**What's next**](ROADMAP.md) · [**Buy me a coffee ☕**](https://buymeacoffee.com/xtragoodlabs) · [**More from XTRA GOOD LABS**](https://github.com/XTRAGOODLABS)
+[**Website**](https://xtragoodlabs.github.io/beatdeck-studio/) · [**Download for Mac**](https://github.com/XTRAGOODLABS/beatdeck-studio/releases/download/v1.0.2/Beatdeck-1.0.2-macOS-arm64.dmg) · [**Controller map**](Controller-Mappings.md) · [**Version history**](CHANGELOG.md) · [**What's next**](ROADMAP.md) · [**Buy me a coffee ☕**](https://buymeacoffee.com/xtragoodlabs) · [**More from XTRA GOOD LABS**](https://github.com/XTRAGOODLABS)
 
 </div>
 
@@ -59,7 +59,7 @@ The planned **JUCE rebuild** carries this workflow into a native audio/MIDI engi
 
 ## Install on Mac — no build required
 
-[**Download Beatdeck for Apple Silicon (.dmg)**](https://github.com/XTRAGOODLABS/beatdeck-studio/releases/download/v1.0.1/Beatdeck-1.0.1-macOS-arm64.dmg)
+[**Download Beatdeck for Apple Silicon (.dmg)**](https://github.com/XTRAGOODLABS/beatdeck-studio/releases/download/v1.0.2/Beatdeck-1.0.2-macOS-arm64.dmg)
 
 Requires an **Apple Silicon Mac (M-series), macOS 13 Ventura or newer**. Open the DMG, drag Beatdeck to Applications, eject the image, then open the app. No Node.js or developer tools required. Intel Macs are not supported by this download.
 
